@@ -1,0 +1,3 @@
+C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library/cmake-build-debug/CMakeFiles/Library.dir
+C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library/cmake-build-debug/CMakeFiles/rebuild_cache.dir
