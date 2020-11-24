@@ -66,6 +66,132 @@ struct Book {
     bool operator == (const Book & book) const {
         return (this->id == book.id);
     }
+    //Можно выборочно изменить данные, можно изменить все
+    void editData(){
+        std::string choise = "";
+        std::string data = " ";
+        int numericalData = 0;
+        std::cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<std::endl;
+        std::cout<<"Введите название ячейки, которую хотите изменить"<<std::endl;
+        std::cout<<"1. Дата издания"<<'\n'<<"2. Название"<<'\n'<<"3. Автор"<<'\n'
+                 <<"4. Жанр"<<'\n'<<"5. Стоимость"<<'\n'<<"6. Рейтинг"<<'\n'<<"7. ID"<<'\n'
+                 <<"8. Все"<<'\n'<<"9. Ничего"<<std::endl;
+        std::cout<<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<std::endl;
+        while( true ){
+            std::cin>>choise;
+            if (choise == "Дата издания"){
+                std::cout<<"Введите дату издания в формате dd/mm/yy"<<std::endl;
+                std::cin>>data;
+                setDate(data);
+                break;
+            } else if (choise == "Название"){
+                std::cin>>data;
+                setName(data);
+                break;
+            } else if (choise == "Автор"){
+                std::cin>>data;
+                setAuthor(data);
+                break;
+            } else if (choise == "Жанр"){
+                std::cin>>data;
+                setGenre(data);
+                break;
+            } else if (choise == "Стоимость"){
+                std::cin>>numericalData;
+                setCoast(numericalData);
+                break;
+            } else if (choise == "Рейтинг"){
+                std::cin>>numericalData;
+                setRating(numericalData);
+                break;
+            } else if (choise == "ID"){
+                std::cin>>numericalData;
+                setId(numericalData);
+                break;
+            } else if (choise == "Все"){
+                std::string intermediateChoice = "";
+                while (true){
+                    std::cout<<"Введите дату издания в формате dd/mm/yy"<<std::endl;
+                    std::cin>>data;
+                    setDate(data);
+                    std::cout<<"Хотите закончить изменений данных?"<<'\n'
+                    <<"Введите да или нет"<<std::endl;
+                    std::cin>>intermediateChoice;
+                    if (intermediateChoice == "Да" or intermediateChoice == "да"){
+                        break;
+                    }
+
+                    std::cout<<"Введите название"<<std::endl;
+                    std::cin>>data;
+                    setName(data);
+                    std::cout<<"Хотите закончить изменений данных?"<<'\n'
+                             <<"Введите да или нет"<<std::endl;
+                    std::cin>>intermediateChoice;
+                    if (intermediateChoice == "Да" or intermediateChoice == "да"){
+                        break;
+                    }
+
+                    std::cout<<"Введите Автора"<<std::endl;
+                    std::cin>>data;
+                    setAuthor(data);
+                    std::cout<<"Хотите закончить изменений данных?"<<'\n'
+                             <<"Введите да или нет"<<std::endl;
+                    std::cin>>intermediateChoice;
+                    if (intermediateChoice == "Да" or intermediateChoice == "да"){
+                        break;
+                    }
+
+                    std::cout<<"Введите жанр"<<std::endl;
+                    std::cin>>data;
+                    setGenre(data);
+                    std::cout<<"Хотите закончить изменений данных?"<<'\n'
+                             <<"Введите да или нет"<<std::endl;
+                    std::cin>>intermediateChoice;
+                    if (intermediateChoice == "Да" or intermediateChoice == "да"){
+                        break;
+                    }
+
+                    std::cout<<"Введите цену"<<std::endl;
+                    std::cin>>numericalData;
+                    setCoast(numericalData);
+                    std::cout<<"Хотите закончить изменений данных?"<<'\n'
+                             <<"Введите да или нет"<<std::endl;
+                    std::cin>>intermediateChoice;
+                    if (intermediateChoice == "Да" or intermediateChoice == "да"){
+                        break;
+                    }
+
+                    std::cout<<"Введите цену"<<std::endl;
+                    std::cin>>numericalData;
+                    setCoast(numericalData);
+                    std::cout<<"Хотите закончить изменений данных?"<<'\n'
+                             <<"Введите да или нет"<<std::endl;
+                    std::cin>>intermediateChoice;
+                    if (intermediateChoice == "Да" or intermediateChoice == "да"){
+                        break;
+                    }
+
+                    std::cout<<"Введите рейтинг"<<std::endl;
+                    std::cin>>numericalData;
+                    setRating(numericalData);
+                    std::cout<<"Хотите закончить изменений данных?"<<'\n'
+                             <<"Введите да или нет"<<std::endl;
+                    std::cin>>intermediateChoice;
+                    if (intermediateChoice == "Да" or intermediateChoice == "да"){
+                        break;
+                    }
+                    std::cout<<"Введите Id"<<std::endl;
+                    std::cin>>numericalData;
+                    setId(numericalData);
+                    break;
+                }
+            }else if (choise == "Ничего"){
+                break;
+            } else {
+                std::cout<<"Вы ввели что-то не то, попробуйте еще раз"<<std::endl;
+            }
+        }
+    }
 };
 
 struct Reader{
@@ -136,7 +262,6 @@ int main(){
                       1111111, 1,2};
     Reader reader3 = {"L","F","A","11/12/2020",
                       1111111, 2,2};
-    std::vector<Reader> readers = {reader1, reader2, reader3};
 
     Library library;
     library.addReader(reader2);
