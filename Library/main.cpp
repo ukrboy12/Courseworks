@@ -2,16 +2,63 @@
 #include <vector>
 #include <algorithm>
 
+struct Day{
+    explicit Day(int day){
+        this->day = day;
+    }
+    int day;
+};
+
+struct Month{
+    explicit Month(int month){
+        this->month = month;
+    }
+    int month;
+};
+
+struct Year{
+    explicit Year(int year){
+        this->year = year;
+    }
+    int year;
+};
+
+struct Date{
+    Date(Day newDay, Month newMonth, Year newYear){
+        this->day = newDay.day;
+        this->month = newMonth.month;
+        this->year = newYear.year;
+    }
+    int getDayIndex(int days, int month, int year){
+        for (int i = 0; i < month - 1; i++)
+        {
+            days += daysOfTheMonth[i];
+        }
+        if ( year%4==0 and year%100==0 and year%400==0){
+            days += 1;
+        }
+        return days;
+    }
+    int daysOfTheMonth[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    int day;
+    int month;
+    int year;
+};
+
 struct Book {
-    std::string date;
+private:
+    Date date;
     std::string name;
     std::string author;
     std::string genre;
     int coast;
     int rating;
     int id;
+    int idReader = 0;
+    int idDayOfReceipt = 0;
 
-    std::string getDate() const{
+public:
+    Date getDate() const{
         return date;
     }
     std::string getName() const {
@@ -35,7 +82,23 @@ struct Book {
         return id;
     }
 
-    void setDate(std::string date){
+    int getIdReader () const {
+        return idReader;
+    }
+
+    int getDayOfReceipt() const {
+        return idDayOfReceipt;
+    }
+
+    void setIdReader(int id) {
+        this->idReader = id;
+    }
+
+    void setIdDayOfReceipt( int day){
+        this->idDayOfReceipt = day;
+    }
+
+    void setDate(Date date){
         this->date = date;
     }
 
@@ -80,9 +143,10 @@ struct Book {
         while( true ){
             std::cin>>choise;
             if (choise == "Дата издания"){
-                std::cout<<"Введите дату издания в формате dd/mm/yy"<<std::endl;
-                std::cin>>data;
-                setDate(data);
+                int day, month, year;
+                std::cout<<"Введите дату издания в формате dd mm yy"<<std::endl;
+                std::cin>>day>>month>>year;
+                setDate(Date(Day{day},Month{month}, Year{year}));
                 break;
             } else if (choise == "Название"){
                 std::cin>>data;
@@ -111,9 +175,10 @@ struct Book {
             } else if (choise == "Все"){
                 std::string intermediateChoice = "";
                 while (true){
-                    std::cout<<"Введите дату издания в формате dd/mm/yy"<<std::endl;
-                    std::cin>>data;
-                    setDate(data);
+                    int day, month, year;
+                    std::cout<<"Введите дату издания в формате dd mm yy"<<std::endl;
+                    std::cin>>day>>month>>year;
+                    setDate(Date(Day{day},Month{month}, Year{year}));
                     std::cout<<"Хотите закончить изменений данных?"<<'\n'
                     <<"Введите да или нет"<<std::endl;
                     std::cin>>intermediateChoice;
@@ -211,6 +276,34 @@ struct Reader{
 class Library{
 public:
 
+    void issuingBook(Book book, Reader reader){
+        if(book.getIdReader() == 0 ){
+            std::cout<<"Книга занята"<<std::endl;
+        } else {
+            book.setIdReader(reader.getId());
+            int day, month, year;
+            std::cout<<"Введите предположительную дату возвращения в формате dd mm yy"<<std::endl;
+            std::cin>>day>>month>>year;
+            book.setIdDayOfReceipt(Date(Day{day},Month{month},
+                                        Year{year}).getDayIndex(day,month,year));
+
+        }
+    }
+
+    void returnBook(Book book, Reader reader){
+        book.setIdReader(0);
+        int day, month, year;
+        std::cout<<"Введите дату возвращения в формате dd mm yy"<<std::endl;
+        std::cin>>day>>month>>year;
+        int returnDay = Date(Day{day},Month{month},
+                             Year{year}).getDayIndex(day,month,year);
+        if (book.getDayOfReceipt() >= returnDay){
+            std::cout<<"Пени нет"<<std::endl;
+        } else {
+            std::cout<<"Вы должны вернуть пени: "<< (returnDay - book.getDayOfReceipt())*3
+            <<" грн"<<std::endl;
+        }
+    }
     void addBook(const Book &book){
         books.push_back(book);
     }
@@ -227,16 +320,15 @@ public:
 
     void removeReader(int id){
         readers.erase(std::remove(readers.begin(), readers.end(),
-                                  findReader( id)),readers.end());
+                                  findReader(id)),readers.end());
         std::cout<<readers.size()<<std::endl;
     }
 
 
 private:
-
     Book findBook(int id){
         for(auto i : books){
-            if(i.id == id){
+            if(i.getId() == id){
                 return i;
             }
         }
@@ -262,7 +354,7 @@ int main(){
                       1111111, 1,2};
     Reader reader3 = {"L","F","A","11/12/2020",
                       1111111, 2,2};
-
+    //Book book;
     Library library;
     library.addReader(reader2);
     library.addReader(reader1);
