@@ -58,9 +58,6 @@ private:
     int idDayOfReceipt = 0;
 
 public:
-    Date getDate() const{
-        return date;
-    }
     std::string getName() const {
         return name;
     }
@@ -90,16 +87,19 @@ public:
         return idDayOfReceipt;
     }
 
+    Date getDate() const{
+        return date;
+    }
+    void setDate(Date date){
+        this->date = date;
+    }
+
     void setIdReader(int id) {
         this->idReader = id;
     }
 
     void setIdDayOfReceipt( int day){
         this->idDayOfReceipt = day;
-    }
-
-    void setDate(Date date){
-        this->date = date;
     }
 
     void setName(std::string name){
@@ -260,6 +260,8 @@ public:
 };
 
 struct Reader{
+private:
+    Date date;
     std::string lastName;
     std::string firstName;
     std::string patronymic;
@@ -268,6 +270,56 @@ struct Reader{
     int id;
     int numberOfBooksRead;
     //std::vector<Book> listOfBooks;
+public:
+    std::string getLastName (){
+        return lastName;
+    }
+    std::string getFirstName(){
+        return firstName;
+    }
+
+    std::string getPatronymic(){
+     return patronymic;
+    }
+
+    int getPassport(){
+        return passport;
+    }
+
+    int getId(){
+        return id;
+    }
+
+    int getNumberOfTheBooksRead(){
+        return numberOfBooksRead;
+    }
+
+    void setLastName(std::string lastName){
+        this->lastName = lastName;
+    }
+
+    void setFirstName(std::string firstName){
+        this->firstName = firstName;
+    }
+
+    void setPatronymic(std::string patronymic){
+        this->patronymic = patronymic;
+    }
+    void setPassport(int passport){
+        this->passport = passport;
+    }
+    void setId(int id){
+        this->id = id;
+    }
+    void setNumnberOfTheBooksRead(int number){
+        this->numberOfBooksRead = number;
+    }
+    Date getDate() const{
+        return date;
+    }
+    void setDate(Date date){
+        this->date = date;
+    }
     bool operator == (const Reader & reader) const {
         return (this->id == reader.id);
     }
@@ -275,7 +327,9 @@ struct Reader{
 
 class Library{
 public:
-
+    void sortBooksByRating(){
+        Book temp;
+    }
     void issuingBook(Book book, Reader reader){
         if(book.getIdReader() == 0 ){
             std::cout<<"Книга занята"<<std::endl;
