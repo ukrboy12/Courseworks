@@ -29,6 +29,9 @@ struct Date{
         this->month = newMonth.month;
         this->year = newYear.year;
     }
+    //пустий конструктор
+    Date(){}
+
     int getDayIndex(int days, int month, int year){
         for (int i = 0; i < month - 1; i++)
         {
@@ -46,6 +49,8 @@ struct Date{
 };
 
 struct Book {
+
+
 private:
     Date date;
     std::string name;
@@ -58,6 +63,19 @@ private:
     int idDayOfReceipt = 0;
 
 public:
+    Book(){}
+    Book(const Book& other){
+        this->id = other.id;
+        this->date = other.date;
+        this->name = other.name;
+        this->author = other.author;
+        this->genre = other.genre;
+        this->coast = other.coast;
+        this->idReader = other.idReader;
+        this->idDayOfReceipt = other.idDayOfReceipt;
+        this->rating = other.rating;
+    }
+
     std::string getName() const {
         return name;
     }
@@ -329,7 +347,58 @@ class Library{
 public:
     void sortBooksByRating(){
         Book temp;
+        for(int i = 0; i<books.size()-1 ;i++){
+            for(int j = 0; j < books.size()-i-1; j++){
+                if(books[j].getRating() > books[j+1].getRating()){
+                    temp = books[j];
+                    books[j] = books[j+1];
+                    books[j+1] = temp;
+                }
+            }
+        }
     }
+
+    void sortBooksByAuthor(){
+        Book temp;
+        for(int i = 0; i<books.size()-1 ;i++){
+            for(int j = 0; j < books.size()-i-1; j++){
+                if(books[j].getAuthor() > books[j+1].getAuthor()){
+                    temp = books[j];
+                    books[j] = books[j+1];
+                    books[j+1] = temp;
+                }
+            }
+        }
+    }
+
+    void sortBooksByName(){
+        Book temp;
+        for(int i = 0; i<books.size()-1 ;i++){
+            for(int j = 0; j < books.size()-i-1; j++){
+                if(books[j].getName() > books[j+1].getName()){
+                    temp = books[j];
+                    books[j] = books[j+1];
+                    books[j+1] = temp;
+                }
+            }
+        }
+    }
+
+    void sortBooksByGenre(){
+        Book temp;
+        for(int i = 0; i<books.size()-1 ;i++){
+            for(int j = 0; j < books.size()-i-1; j++){
+                if(books[j].getGenre() > books[j+1].getGenre()){
+                    temp = books[j];
+                    books[j] = books[j+1];
+                    books[j+1] = temp;
+                }
+            }
+        }
+    }
+
+
+    //функция для выдачи книги читателям
     void issuingBook(Book book, Reader reader){
         if(book.getIdReader() == 0 ){
             std::cout<<"Книга занята"<<std::endl;
@@ -391,7 +460,7 @@ private:
 
     Reader findReader(int id){
         for(auto i : readers){
-            if(i.id == id){
+            if(i.getId() == id){
                 return i;
             }
         }
