@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Library_only_da.dir/book.cpp.obj"
   "CMakeFiles/Library_only_da.dir/main.cpp.obj"
+  "CMakeFiles/Library_only_da.dir/menu.cpp.obj"
+  "CMakeFiles/Library_only_da.dir/reader.cpp.obj"
   "Library_only_da.exe"
   "Library_only_da.exe.manifest"
   "Library_only_da.pdb"

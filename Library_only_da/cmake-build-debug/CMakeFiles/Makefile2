@@ -93,12 +93,12 @@ clean: CMakeFiles/Library_only_da.dir/clean
 CMakeFiles/Library_only_da.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target Library_only_da"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target Library_only_da"
 .PHONY : CMakeFiles/Library_only_da.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Library_only_da.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Library_only_da.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/Library_only_da.dir/rule

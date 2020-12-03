@@ -82,7 +82,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/book.cpp">
+			<Option target="Library_only_da"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/headers/book.h">
+			<Option target="Library_only_da"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/headers/menu.h">
+			<Option target="Library_only_da"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/headers/reader.h">
+			<Option target="Library_only_da"/>
+		</Unit>
 		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/main.cpp">
+			<Option target="Library_only_da"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/menu.cpp">
+			<Option target="Library_only_da"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/reader.cpp">
 			<Option target="Library_only_da"/>
 		</Unit>
 		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/CMakeLists.txt">

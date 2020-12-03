@@ -1,4 +1,5 @@
 #include <iostream>
+
 struct Day{
     int day;
 };
@@ -27,6 +28,18 @@ struct Date{
     int day;
     int month;
     int year;
+};
+
+struct Book {
+    Date date;
+    std::string name;
+    std::string author;
+    std::string genre;
+    int coast;
+    int rating;
+    int id;
+    int idReader = 0;
+    int idDayOfReceipt = 0;
 };
 
 int main() {

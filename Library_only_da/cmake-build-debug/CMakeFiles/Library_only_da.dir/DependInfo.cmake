@@ -4,7 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/book.cpp" "C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/cmake-build-debug/CMakeFiles/Library_only_da.dir/book.cpp.obj"
   "C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/main.cpp" "C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/cmake-build-debug/CMakeFiles/Library_only_da.dir/main.cpp.obj"
+  "C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/menu.cpp" "C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/cmake-build-debug/CMakeFiles/Library_only_da.dir/menu.cpp.obj"
+  "C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/reader.cpp" "C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/cmake-build-debug/CMakeFiles/Library_only_da.dir/reader.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

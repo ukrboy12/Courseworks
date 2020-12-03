@@ -89,19 +89,64 @@ CMakeFiles/Library_only_da.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Library_only_da.dir/main.cpp.s"
 	C:\Mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\main.cpp -o CMakeFiles\Library_only_da.dir\main.cpp.s
 
+CMakeFiles/Library_only_da.dir/book.cpp.obj: CMakeFiles/Library_only_da.dir/flags.make
+CMakeFiles/Library_only_da.dir/book.cpp.obj: ../book.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Library_only_da.dir/book.cpp.obj"
+	C:\Mingw\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Library_only_da.dir\book.cpp.obj -c C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\book.cpp
+
+CMakeFiles/Library_only_da.dir/book.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Library_only_da.dir/book.cpp.i"
+	C:\Mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\book.cpp > CMakeFiles\Library_only_da.dir\book.cpp.i
+
+CMakeFiles/Library_only_da.dir/book.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Library_only_da.dir/book.cpp.s"
+	C:\Mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\book.cpp -o CMakeFiles\Library_only_da.dir\book.cpp.s
+
+CMakeFiles/Library_only_da.dir/menu.cpp.obj: CMakeFiles/Library_only_da.dir/flags.make
+CMakeFiles/Library_only_da.dir/menu.cpp.obj: ../menu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Library_only_da.dir/menu.cpp.obj"
+	C:\Mingw\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Library_only_da.dir\menu.cpp.obj -c C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\menu.cpp
+
+CMakeFiles/Library_only_da.dir/menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Library_only_da.dir/menu.cpp.i"
+	C:\Mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\menu.cpp > CMakeFiles\Library_only_da.dir\menu.cpp.i
+
+CMakeFiles/Library_only_da.dir/menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Library_only_da.dir/menu.cpp.s"
+	C:\Mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\menu.cpp -o CMakeFiles\Library_only_da.dir\menu.cpp.s
+
+CMakeFiles/Library_only_da.dir/reader.cpp.obj: CMakeFiles/Library_only_da.dir/flags.make
+CMakeFiles/Library_only_da.dir/reader.cpp.obj: ../reader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Library_only_da.dir/reader.cpp.obj"
+	C:\Mingw\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Library_only_da.dir\reader.cpp.obj -c C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\reader.cpp
+
+CMakeFiles/Library_only_da.dir/reader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Library_only_da.dir/reader.cpp.i"
+	C:\Mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\reader.cpp > CMakeFiles\Library_only_da.dir\reader.cpp.i
+
+CMakeFiles/Library_only_da.dir/reader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Library_only_da.dir/reader.cpp.s"
+	C:\Mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\reader.cpp -o CMakeFiles\Library_only_da.dir\reader.cpp.s
+
 # Object files for target Library_only_da
 Library_only_da_OBJECTS = \
-"CMakeFiles/Library_only_da.dir/main.cpp.obj"
+"CMakeFiles/Library_only_da.dir/main.cpp.obj" \
+"CMakeFiles/Library_only_da.dir/book.cpp.obj" \
+"CMakeFiles/Library_only_da.dir/menu.cpp.obj" \
+"CMakeFiles/Library_only_da.dir/reader.cpp.obj"
 
 # External object files for target Library_only_da
 Library_only_da_EXTERNAL_OBJECTS =
 
 Library_only_da.exe: CMakeFiles/Library_only_da.dir/main.cpp.obj
+Library_only_da.exe: CMakeFiles/Library_only_da.dir/book.cpp.obj
+Library_only_da.exe: CMakeFiles/Library_only_da.dir/menu.cpp.obj
+Library_only_da.exe: CMakeFiles/Library_only_da.dir/reader.cpp.obj
 Library_only_da.exe: CMakeFiles/Library_only_da.dir/build.make
 Library_only_da.exe: CMakeFiles/Library_only_da.dir/linklibs.rsp
 Library_only_da.exe: CMakeFiles/Library_only_da.dir/objects1.rsp
 Library_only_da.exe: CMakeFiles/Library_only_da.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Library_only_da.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Cyber_mavka\Documents\C++\Work\Courseworks\Library_only_da\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Library_only_da.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Library_only_da.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

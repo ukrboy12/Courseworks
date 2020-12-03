@@ -142,6 +142,33 @@ Library_only_da/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/build
 .PHONY : Library_only_da/fast
 
+book.obj: book.cpp.obj
+
+.PHONY : book.obj
+
+# target to build an object file
+book.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/book.cpp.obj
+.PHONY : book.cpp.obj
+
+book.i: book.cpp.i
+
+.PHONY : book.i
+
+# target to preprocess a source file
+book.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/book.cpp.i
+.PHONY : book.cpp.i
+
+book.s: book.cpp.s
+
+.PHONY : book.s
+
+# target to generate assembly for a file
+book.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/book.cpp.s
+.PHONY : book.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -169,6 +196,60 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+menu.obj: menu.cpp.obj
+
+.PHONY : menu.obj
+
+# target to build an object file
+menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/menu.cpp.obj
+.PHONY : menu.cpp.obj
+
+menu.i: menu.cpp.i
+
+.PHONY : menu.i
+
+# target to preprocess a source file
+menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/menu.cpp.i
+.PHONY : menu.cpp.i
+
+menu.s: menu.cpp.s
+
+.PHONY : menu.s
+
+# target to generate assembly for a file
+menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/menu.cpp.s
+.PHONY : menu.cpp.s
+
+reader.obj: reader.cpp.obj
+
+.PHONY : reader.obj
+
+# target to build an object file
+reader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/reader.cpp.obj
+.PHONY : reader.cpp.obj
+
+reader.i: reader.cpp.i
+
+.PHONY : reader.i
+
+# target to preprocess a source file
+reader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/reader.cpp.i
+.PHONY : reader.cpp.i
+
+reader.s: reader.cpp.s
+
+.PHONY : reader.s
+
+# target to generate assembly for a file
+reader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/reader.cpp.s
+.PHONY : reader.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -178,9 +259,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Library_only_da
+	@echo ... book.obj
+	@echo ... book.i
+	@echo ... book.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... menu.obj
+	@echo ... menu.i
+	@echo ... menu.s
+	@echo ... reader.obj
+	@echo ... reader.i
+	@echo ... reader.s
 .PHONY : help
 
 
