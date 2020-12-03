@@ -85,7 +85,13 @@
 		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/book.cpp">
 			<Option target="Library_only_da"/>
 		</Unit>
+		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/date.cpp">
+			<Option target="Library_only_da"/>
+		</Unit>
 		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/headers/book.h">
+			<Option target="Library_only_da"/>
+		</Unit>
+		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/headers/date.h">
 			<Option target="Library_only_da"/>
 		</Unit>
 		<Unit filename="C:/Users/Cyber_mavka/Documents/C++/Work/Courseworks/Library_only_da/headers/menu.h">

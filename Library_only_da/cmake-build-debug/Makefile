@@ -169,6 +169,33 @@ book.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/book.cpp.s
 .PHONY : book.cpp.s
 
+date.obj: date.cpp.obj
+
+.PHONY : date.obj
+
+# target to build an object file
+date.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/date.cpp.obj
+.PHONY : date.cpp.obj
+
+date.i: date.cpp.i
+
+.PHONY : date.i
+
+# target to preprocess a source file
+date.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/date.cpp.i
+.PHONY : date.cpp.i
+
+date.s: date.cpp.s
+
+.PHONY : date.s
+
+# target to generate assembly for a file
+date.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Library_only_da.dir\build.make CMakeFiles/Library_only_da.dir/date.cpp.s
+.PHONY : date.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -262,6 +289,9 @@ help:
 	@echo ... book.obj
 	@echo ... book.i
 	@echo ... book.s
+	@echo ... date.obj
+	@echo ... date.i
+	@echo ... date.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
