@@ -61,31 +61,96 @@ void menu(){
                 }
             }
         } else if (choice == "Print"){
-            printBook(books, numberBooks);
-        } else if (choice == "Exit"){
-            break;
-        } else if (choice == "Sort"){
-            std::cout<<"1. Author\t2. Name\t3. Genre\t4. Rating"<<std::endl;
+            std::cout<<"1. Book\n"<<"2. Reader"<<"3. All"<<std::endl;
             while (true){
                 std::cout<<"Input choice : ";
                 std::cin>>choice;
-                if (choice == "Author"){
-                    sortByAuthor(books, numberBooks);
+                if (choice == "Book"){
+                    printBook(books, numberBooks);
                     break;
-                } else if (choice == "Name"){
-                    sortByName(books, numberBooks);
+                } else if (choice == "Reader"){
+                    printReaders(readers, numberReaders);
                     break;
-                } else if (choice == "Genre") {
-                    sortByGenre(books, numberBooks);
+                } else if (choice == "All"){
+                    printBook(books, numberBooks);
+                    printReaders(readers, numberReaders);
+                }
+            }
+
+        } else if (choice == "Exit"){
+            break;
+        } else if (choice == "Sort"){
+            std::cout << "1. Book\n" << "2. Reader" << std::endl;
+            while (true){
+                std::cout<<"Input choice : ";
+                std::cin>>choice;
+                if (choice == "Book"){
+                    std::cout<<"1. Author\t2. Name\t3. Genre\t4. Rating"<<std::endl;
+                    while (true){
+                        std::cout<<"Input choice : ";
+                        std::cin>>choice;
+                        if (choice == "Author"){
+                            sortByAuthor(books, numberBooks);
+                            break;
+                        } else if (choice == "Name"){
+                            sortByName(books, numberBooks);
+                            break;
+                        } else if (choice == "Genre") {
+                            sortByGenre(books, numberBooks);
+                            break;
+                        } else if (choice == "Rating"){
+                            sortByRating(books, numberBooks);
+                            break;
+                        } else {
+                            std::cout<<"Incorrect input"<<std::endl;
+                        }
+                    }
                     break;
-                } else if (choice == "Rating"){
-                    sortByRating(books, numberBooks);
-                    break;
-                } else {
-                    std::cout<<"Incorrect input"<<std::endl;
+                } else if (choice == "Reader"){
+                    std::cout<<"1. ID\t2. Passport\t3. LFP\t4. CountOfBooksRead"<<std::endl;
+                    while (true){
+                        std::cout<<"Input choice : ";
+                        std::cin>>choice;
+                        if (choice =="Id"){
+                            sortById(readers, numberReaders);
+                            break;
+                        } else if (choice == "Passport"){
+                            sortByPassport(readers, numberReaders);
+                            break;
+                        } else if (choice == "CountOfBooksRead"){
+                            sortByCountOfBooksRead(readers, numberReaders);
+                            break;
+                        } else if (choice == "LFP"){
+                            sortByLFP(readers, numberReaders);
+                            break;
+                        } else {
+                            std::cout<<"Incorrect input"<<std::endl;
+                        }
+                    }
                 }
             }
         } else if (choice == "Edit"){
+            std::cout<<"1. Book\n"<<"2. Reader"<<std::endl;
+            int tempId;
+            while (true){
+                std::cout<<"Input choice : ";
+                std::cin>>choice;
+                if (choice == "Book"){
+                    std::cout<<"Input id book for edit"<<std::endl;
+                    std::cin>>tempId;
+                    editBook(findById(books, tempId, numberBooks));
+                    break;
+                }
+                else if (choice == "Reader"){
+                    std::cout<<"Input id reader for edit"<<std::endl;
+                    std::cin>>tempId;
+                    editReader(findByIdReader(readers, tempId, numberReaders));
+                    break;
+                }
+                else{
+                    std::cout<<"Incorrect input"<<std::endl;
+                }
+            }
 
         }else {
             std::cout<<"Incorrect input"<<std::endl;

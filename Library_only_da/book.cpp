@@ -1,6 +1,6 @@
 #include "headers/book.h"
 
-Book* addBook(Book* books, Book book, int num){
+Book* addBook(Book*& books, Book book, int num){
     Book* newBooks = new Book [num+1];
      for (int i = 0;i<num;i++){
          newBooks[i] = books[i];
@@ -10,7 +10,7 @@ Book* addBook(Book* books, Book book, int num){
     return newBooks;
 }
 
-Book* removeBook(Book* books, int idBook, int num){
+Book* removeBook(Book*& books, int idBook, int num){
     Book* newBooks = new Book [num-1];
     int count = 0;
     for (int i = 0; i < num ; i++){
@@ -216,6 +216,14 @@ void sortByGenre(Book*& books, int number){
                 books[j] = books[j+1];
                 books[j+1] = temp;
             }
+        }
+    }
+}
+
+Book & findById(Book *&books,int id, int number){
+    for(int i = 0; i<number; i++){
+        if (books[i].id == id){
+            return books[i];
         }
     }
 }
