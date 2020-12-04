@@ -19,5 +19,9 @@ Book* removeBook(Book* books, int id, int num);
 Book createBook();
 void printBook(Book* books, int num);
 void editBook(Book& book);
+void sortByAuthor(Book*& books, int number);
+void sortByRating(Book*& books, int number);
+void sortByName(Book*& books, int number);
+void sortByGenre(Book*& books, int number);
 
 

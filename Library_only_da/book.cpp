@@ -169,3 +169,53 @@ void editBook(Book& book){
     }
 }
 
+void sortByAuthor(Book*& books, int number){
+    Book temp;
+    for(int i = 0; i<number ;i++){
+        for(int j = 0; j < number-1; j++){
+            if(books[j].author > books[j+1].author){
+                temp = books[j];
+                books[j] = books[j+1];
+                books[j+1] = temp;
+            }
+        }
+    }
+}
+
+void sortByRating(Book*& books, int number){
+    Book temp;
+    for(int i = 0; i<number ;i++){
+        for(int j = 0; j < number-1; j++){
+            if(books[j].rating > books[j+1].rating){
+                temp = books[j];
+                books[j] = books[j+1];
+                books[j+1] = temp;
+            }
+        }
+    }
+}
+
+void sortByName(Book*& books, int number){
+    Book temp;
+    for(int i = 0; i<number ;i++){
+        for(int j = 0; j < number-1; j++){
+            if(books[j].name > books[j+1].name){
+                temp = books[j];
+                books[j] = books[j+1];
+                books[j+1] = temp;
+            }
+        }
+    }
+}
+void sortByGenre(Book*& books, int number){
+    Book temp;
+    for(int i = 0; i<number ;i++){
+        for(int j = 0; j < number-1; j++){
+            if(books[j].genre > books[j+1].genre){
+                temp = books[j];
+                books[j] = books[j+1];
+                books[j+1] = temp;
+            }
+        }
+    }
+}

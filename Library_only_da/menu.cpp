@@ -14,7 +14,7 @@ void menu(){
     Reader* readers = new Reader[numberReaders];
     std::string choice = "";
     while (true){
-        std::cout<<"Menu: \n"<<"0. Exit\t1. Add\t"<<"2. Delete\t"<<std::endl;
+        std::cout<<"Menu: \n"<<"0. Exit\t1. Add\t"<<"2. Delete 3. Edit\t4. Sort"<<std::endl;
         std::cout<<"Input choice : ";
         std::cin>>choice;
 
@@ -64,9 +64,30 @@ void menu(){
             printBook(books, numberBooks);
         } else if (choice == "Exit"){
             break;
-        }else if (choice == "Sort"){
+        } else if (choice == "Sort"){
+            std::cout<<"1. Author\t2. Name\t3. Genre\t4. Rating"<<std::endl;
+            while (true){
+                std::cout<<"Input choice : ";
+                std::cin>>choice;
+                if (choice == "Author"){
+                    sortByAuthor(books, numberBooks);
+                    break;
+                } else if (choice == "Name"){
+                    sortByName(books, numberBooks);
+                    break;
+                } else if (choice == "Genre") {
+                    sortByGenre(books, numberBooks);
+                    break;
+                } else if (choice == "Rating"){
+                    sortByRating(books, numberBooks);
+                    break;
+                } else {
+                    std::cout<<"Incorrect input"<<std::endl;
+                }
+            }
+        } else if (choice == "Edit"){
 
-        } else {
+        }else {
             std::cout<<"Incorrect input"<<std::endl;
         }
     }
