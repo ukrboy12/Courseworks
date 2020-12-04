@@ -8,9 +8,16 @@ CMakeFiles/Library_only_da.dir/book.cpp.obj: ../headers/date.h
 CMakeFiles/Library_only_da.dir/date.cpp.obj: ../date.cpp
 CMakeFiles/Library_only_da.dir/date.cpp.obj: ../headers/date.h
 
+CMakeFiles/Library_only_da.dir/main.cpp.obj: ../headers/menu.h
 CMakeFiles/Library_only_da.dir/main.cpp.obj: ../main.cpp
 
+CMakeFiles/Library_only_da.dir/menu.cpp.obj: ../headers/book.h
+CMakeFiles/Library_only_da.dir/menu.cpp.obj: ../headers/date.h
+CMakeFiles/Library_only_da.dir/menu.cpp.obj: ../headers/menu.h
+CMakeFiles/Library_only_da.dir/menu.cpp.obj: ../headers/reader.h
 CMakeFiles/Library_only_da.dir/menu.cpp.obj: ../menu.cpp
 
+CMakeFiles/Library_only_da.dir/reader.cpp.obj: ../headers/date.h
+CMakeFiles/Library_only_da.dir/reader.cpp.obj: ../headers/reader.h
 CMakeFiles/Library_only_da.dir/reader.cpp.obj: ../reader.cpp
 

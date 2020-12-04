@@ -3,15 +3,16 @@
 #include "date.h"
 
 struct Reader{
-    Date date;
     std::string lastName;
     std::string firstName;
     std::string patronymic;
-    std::string dateOfBirth;
+    Date dateOfBirth;
     int passport;
     int id;
-    int numberOfBooksRead;
+    //int OfBooksRead;
 };
 
 Reader* addReader(Reader *readers, Reader reader, int num);
 Reader* removeReader(Reader *readers, int idReader, int num);
+Reader createReader();
+

@@ -16,5 +16,8 @@ struct Book {
 
 Book* addBook(Book* books, Book book, int num);
 Book* removeBook(Book* books, int id, int num);
+Book createBook();
+void printBook(Book* books, int num);
+void editBook();
 
 
