@@ -1,7 +1,5 @@
 #include "headers/menu.h"
-#include <iostream>
-#include "headers/book.h"
-#include "headers/reader.h"
+
 
 //books[0] = {"1","1","1",1,1,1, 0, 0};
 //books[1] = {"2","2","2",2,2,2, 0, 0};
@@ -14,7 +12,8 @@ void menu(){
     Reader* readers = new Reader[numberReaders];
     std::string choice = "";
     while (true){
-        std::cout<<"Menu: \n"<<"0. Exit\t1. Add\t"<<"2. Delete 3. Edit\t4. Sort"<<std::endl;
+        std::cout<<std::endl;
+        std::cout<<"Menu: \n"<<"0. Exit\t1. Add\t"<<"2. Delete \t3. Edit\t4. Sort \t5.Print"<<std::endl;
         std::cout<<"Input choice : ";
         std::cin>>choice;
 
@@ -61,7 +60,7 @@ void menu(){
                 }
             }
         } else if (choice == "Print"){
-            std::cout<<"1. Book\n"<<"2. Reader"<<"3. All"<<std::endl;
+            std::cout<<"1. Book\n"<<"2. Reader"<<"\n3. All"<<std::endl;
             while (true){
                 std::cout<<"Input choice : ";
                 std::cin>>choice;
@@ -128,6 +127,45 @@ void menu(){
                         }
                     }
                 }
+            }
+        } else if (choice == "Give"){
+           std::cout<<"Input id book for give"<<std::endl;
+           int tempIdBook, tempIdReader, day, month, year;
+           std::cin>>tempIdBook;
+           std::cout<<"Input id reader"<<std::endl;
+           std::cin>>tempIdReader;
+           if (existIdReader(readers,tempIdReader,numberReaders) && existIdBook(books, tempIdBook, numberBooks)){
+                std::cout<<"Input return Date format dd mm yyyy"<<std::endl;
+                std::cin>>day>>month>>year;
+                Book tempBook = findById(books,tempIdBook,numberBooks);
+                tempBook.idDayOfReceipt = getDayIndex(day, month,year);
+                tempBook.idReader = tempIdReader;
+                findByIdReader(readers,tempIdReader,numberReaders).countOfBooksRead +=1;
+           } else {
+               std::cout<<"Incorrect id"<<std::cout;
+           }
+
+        }else if (choice == "Return"){
+            std::cout<<"Input id book for give"<<std::endl;
+            int tempIdBook, tempIdReader, day, month, year;
+            std::cin>>tempIdBook;
+            std::cout<<"Input id reader"<<std::endl;
+            std::cin>>tempIdReader;
+            if (existIdReader(readers,tempIdReader,numberReaders) && existIdBook(books, tempIdBook, numberBooks)){
+                std::cout<<"Input return Date format dd mm yyyy"<<std::endl;
+                std::cin>>day>>month>>year;
+                Book tempBook = findById(books,tempIdBook,numberBooks);
+                tempBook.idReader = 0;
+                Reader tempReader = findByIdReader(readers,tempIdReader,numberReaders);
+                if (tempBook.idDayOfReceipt-getDayIndex(day, month, year)<0){
+                    tempReader.overdueDays = fabs(tempBook.idDayOfReceipt-getDayIndex(day, month, year));
+                    tempReader.penny = tempReader.penny + tempReader.overdueDays * 3;
+                    std::cout<<"Penny : "<<tempReader.penny<<std::endl;
+                } else {
+                    std::cout<<"No penny"<<std::endl;
+                }
+            } else {
+                std::cout<<"Incorrect id"<<std::cout;
             }
         } else if (choice == "Edit"){
             std::cout<<"1. Book\n"<<"2. Reader"<<std::endl;
