@@ -1,7 +1,7 @@
 #pragma once
 #include "date.h"
 #include <iostream>
-
+#include <iomanip>
 struct Book {
     Date date;
     std::string name;
@@ -23,5 +23,7 @@ void sortByAuthor(Book*& books, int number);
 void sortByRating(Book*& books, int number);
 void sortByName(Book*& books, int number);
 void sortByGenre(Book*& books, int number);
+bool existIdBook(Book *&books,int id, int number);
 Book & findById(Book *&books,int id, int number);
+void printMostPopularBooks(Book *&books, int number);
 

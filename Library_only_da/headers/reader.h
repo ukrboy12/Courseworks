@@ -10,6 +10,8 @@ struct Reader{
     int passport;
     int id;
     int countOfBooksRead = 0;
+    int overdueDays = 0; // просроченые дни
+    int penny = 0;
 };
 
 Reader* addReader(Reader *&readers, Reader reader, int num);
@@ -20,5 +22,6 @@ void sortByCountOfBooksRead(Reader*& readers, int number);
 void sortByPassport(Reader*& readers, int number);
 void sortByLFP(Reader*& readers, int number);
 void editReader(Reader& reader);
-Reader & findByIdReader(Reader *&books,int id, int number);
+bool existIdReader(Reader *&reader,int id, int number);
+Reader & findByIdReader(Reader *&reader,int id, int number);
 void printReaders(Reader*& readers, int num);

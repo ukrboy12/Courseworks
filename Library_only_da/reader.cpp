@@ -219,6 +219,15 @@ void editReader(Reader & reader){
     }
 }
 
+bool existIdReader(Reader *& reader, int id, int number){
+    for(int i = 0; i<number; i++){
+        if (reader[i].id == id){
+            return true;
+        }
+    }
+    return false;
+}
+
 Reader& findByIdReader(Reader *& reader, int id, int number){
     for(int i = 0; i<number; i++){
         if (reader[i].id == id){
@@ -229,13 +238,13 @@ Reader& findByIdReader(Reader *& reader, int id, int number){
 
 void printReaders(Reader*& readers, int num){
     std::cout<<"|"<<std::setw(15)<<"Last Name"<<"|"<<std::setw(15)<< "First Name"<<"|"<<std::setw(15)<< "Patronymic"<<"|"<<std::setw(15)<<" Date Of Birth "
-             <<"|"<<std::setw(10)<<" Passport"<<"|"<<std::setw(5)<<" Id"<<std::setw(5)<<"|"<<std::setw(15)<< "Count of books read"<<"|"<<std::setw(10)<<std::endl;
+             <<"|"<<std::setw(10)<<" Passport"<<"|"<<std::setw(5)<<" Id"<<std::setw(5)<<"|"<<std::setw(15)<< "Count of books read"<<"|"<<std::endl;
     std::string date;
     for(int i = 0; i < num ; i++){
         date = std::to_string(readers[i].dateOfBirth.day) + "/" + std::to_string(readers[i].dateOfBirth.month) + "/" + std::to_string(readers[i].dateOfBirth.year);
         std::cout<<"|"<<std::setw(15)<<readers[i].lastName<<"|"<<std::setw(15)
         <<readers[i].firstName<<"|"<<std::setw(15)<< readers[i].patronymic<<"|"<<std::setw(15)<<date
         <<"|"<<std::setw(10)<<readers[i].passport<<"|"<<std::setw(5)<<readers[i].id
-        <<std::setw(5)<<"|"<<std::setw(15) << readers[i].countOfBooksRead<<"|"<<std::setw(10)<<std::endl;
+        <<std::setw(5)<<"|"<<std::setw(15) << readers[i].countOfBooksRead<<"|"<<std::endl;
     }
 }

@@ -13,7 +13,7 @@ void menu(){
     std::string choice = "";
     while (true){
         std::cout<<std::endl;
-        std::cout<<"Menu: \n"<<"0. Exit\t1. Add\t"<<"2. Delete \t3. Edit\t4. Sort \t5.Print"<<std::endl;
+        std::cout<<"Menu: \n0. Exit\t1. Add\t2. Delete\t3. Edit\t4. Sort\t5. Print\t6. Give\t7. Return\t8. Popular"<<std::endl;
         std::cout<<"Input choice : ";
         std::cin>>choice;
 
@@ -144,7 +144,6 @@ void menu(){
            } else {
                std::cout<<"Incorrect id"<<std::cout;
            }
-
         }else if (choice == "Return"){
             std::cout<<"Input id book for give"<<std::endl;
             int tempIdBook, tempIdReader, day, month, year;
@@ -167,6 +166,8 @@ void menu(){
             } else {
                 std::cout<<"Incorrect id"<<std::cout;
             }
+        } else if(choice == "Popular"){
+            printMostPopularBooks(books,numberBooks);
         } else if (choice == "Edit"){
             std::cout<<"1. Book\n"<<"2. Reader"<<std::endl;
             int tempId;
