@@ -26,4 +26,5 @@ void sortByGenre(Book*& books, int number);
 bool existIdBook(Book *&books,int id, int number);
 Book & findById(Book *&books,int id, int number);
 void printMostPopularBooks(Book *&books, int number);
+void booksOnHand(Book *&books, int number);
 

@@ -270,3 +270,18 @@ void printMostPopularBooks(Book *&books, int number){
         }
     }
 }
+
+void booksOnHand(Book *&books, int number){
+    std::string date = "";
+    std::cout<<"|"<<std::setw(15)<<"Name"<<"|"<<std::setw(15)<< "Author"<<"|"<<std::setw(15)<< "Genre"<<"|"<<std::setw(15)<<"Date"
+             <<"|"<<std::setw(10)<<"Coast"<<"|"<<std::setw(5)<<" Id"<<std::setw(5)<<"|"<<std::setw(15)<< "Rating"<<"|"<<std::endl;
+    for(int i = 0; i<number; i++){
+        if (books[i].idReader != 0){
+            date = std::to_string(books[i].date.day) + "/" + std::to_string(books[i].date.month) + "/" + std::to_string(books[i].date.year);
+            std::cout<<"|"<<std::setw(15)<<books[i].name<<"|"<<std::setw(15)
+                     <<books[i].author<<"|"<<std::setw(15)<< books[i].genre<<"|"<<std::setw(15)<<date
+                     <<"|"<<std::setw(10)<<books[i].coast<<"|"<<std::setw(5)<<books[i].id
+                     <<std::setw(5)<<"|"<<std::setw(15) << books[i].rating<<"|"<<std::endl;
+        }
+    }
+}
