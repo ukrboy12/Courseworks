@@ -61,7 +61,7 @@ void sortByCountOfBooksRead(Reader*& readers, int number){
     Reader temp;
     for(int i = 0; i<number ;i++){
         for(int j = 0; j < number-1; j++){
-            if(readers[j].countOfBooksRead > readers[j+1].countOfBooksRead){
+            if(readers[j].countOfBooksRead < readers[j+1].countOfBooksRead){
                 temp = readers[j];
                 readers[j] = readers[j+1];
                 readers[j+1] = temp;
@@ -246,5 +246,29 @@ void printReaders(Reader*& readers, int num){
         <<readers[i].firstName<<"|"<<std::setw(15)<< readers[i].patronymic<<"|"<<std::setw(15)<<date
         <<"|"<<std::setw(10)<<readers[i].passport<<"|"<<std::setw(5)<<readers[i].id
         <<std::setw(5)<<"|"<<std::setw(15) << readers[i].countOfBooksRead<<"|"<<std::endl;
+    }
+}
+
+void printMostActiveReader(Reader*& readers, int num){
+    std::cout<<"|"<<std::setw(15)<<"Last Name"<<"|"<<std::setw(15)<< "First Name"<<"|"<<std::setw(15)<< "Patronymic"<<"|"<<std::setw(15)<<" Date Of Birth "
+             <<"|"<<std::setw(10)<<" Passport"<<"|"<<std::setw(5)<<" Id"<<std::setw(5)<<"|"<<std::setw(15)<< "Count of books read"<<"|"<<std::endl;
+    std::string date;
+    sortByCountOfBooksRead(readers,  num);
+    for(int i = 0; i < num ; i++){
+        date = std::to_string(readers[i].dateOfBirth.day) + "/" + std::to_string(readers[i].dateOfBirth.month) + "/" + std::to_string(readers[i].dateOfBirth.year);
+        std::cout<<"|"<<std::setw(15)<<readers[i].lastName<<"|"<<std::setw(15)
+                 <<readers[i].firstName<<"|"<<std::setw(15)<< readers[i].patronymic<<"|"<<std::setw(15)<<date
+                 <<"|"<<std::setw(10)<<readers[i].passport<<"|"<<std::setw(5)<<readers[i].id
+                 <<std::setw(5)<<"|"<<std::setw(15) << readers[i].countOfBooksRead<<"|"<<std::endl;
+    }
+}
+
+void printInfoOverdueDays(Reader*& readers, int num){
+    for(int i = 0; i < num ; i++){
+        if (readers[i].overdueDays != 0 && readers[i].penny != 0){
+        std::cout<<"|"<<std::setw(15)<<readers[i].lastName<<"|"<<std::setw(15)
+                 <<readers[i].firstName<<"|"<<std::setw(15)<< readers[i].patronymic<<"|"<<std::setw(15)<<"Penny: "<< readers[i].penny
+                 <<"|"<<std::setw(10)<<"Days: "<<readers[i].overdueDays<<"|"<<std::setw(10)<<std::endl;
+        }
     }
 }

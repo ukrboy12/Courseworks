@@ -13,7 +13,7 @@ void menu(){
     std::string choice = "";
     while (true){
         std::cout<<std::endl;
-        std::cout<<"Menu: \n0. Exit\t1. Add\t2. Delete\t3. Edit\t4. Sort\t5. Print\t6. Give\t7. Return\t8. Popular"<<std::endl;
+        std::cout<<"Menu: \n0. Exit\t1. Add\t2. Delete\t3. Edit\t4. Sort\n5. Print\t6. Give\t7. Return\t8. Popular\n9. BooksOnHand\t10. ActiveReaders\t11. Overdue"<<std::endl;
         std::cout<<"Input choice : ";
         std::cin>>choice;
 
@@ -191,7 +191,13 @@ void menu(){
                 }
             }
 
-        }else {
+        } else if (choice=="Overdue"){
+          printInfoOverdueDays(readers, numberReaders);
+        } else if(choice=="ActiveReaders"){
+          printMostActiveReader(readers, numberReaders);
+        } else if (choice == "BooksOnHand"){
+            booksOnHand(books, numberBooks);
+        } else {
             std::cout<<"Incorrect input"<<std::endl;
         }
     }

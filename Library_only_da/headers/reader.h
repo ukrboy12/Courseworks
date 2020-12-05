@@ -25,3 +25,5 @@ void editReader(Reader& reader);
 bool existIdReader(Reader *&reader,int id, int number);
 Reader & findByIdReader(Reader *&reader,int id, int number);
 void printReaders(Reader*& readers, int num);
+void printMostActiveReader(Reader*& readers, int num);
+void printInfoOverdueDays(Reader*& readers, int num);
