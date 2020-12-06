@@ -254,11 +254,8 @@ void printMostPopularBooks(Book *&books, int number){
     std::string genre = books[0].genre;
     std::string date = "";
     Book temp = books[0];
-    std::cout<<"|"<<std::setw(15)<<"Name"<<"|"<<std::setw(15)<< "Author"<<"|"<<std::setw(15)<< "Genre"<<"|"<<std::setw(15)<<"Date"
-             <<"|"<<std::setw(10)<<"Coast"<<"|"<<std::setw(5)<<" Id"<<std::setw(5)<<"|"<<std::setw(15)<< "Rating"<<"|"<<std::endl;
     for(int i = 0; i<number; i++){
-
-        if (books[i].genre == temp.genre and books[i].rating>temp.rating){
+        if (books[i].genre == temp.genre and books[i].rating > temp.rating){
             temp = books[i];
         }
         if (books[i].genre != temp.genre || number - 1 == i){
@@ -267,6 +264,58 @@ void printMostPopularBooks(Book *&books, int number){
                      <<temp.author<<"|"<<std::setw(15)<< temp.genre<<"|"<<std::setw(15)<<date
                      <<"|"<<std::setw(10)<<temp.coast<<"|"<<std::setw(5)<<temp.id
                      <<std::setw(5)<<"|"<<std::setw(15) << temp.rating<<"|"<<std::endl;
+            temp = books[i];
+        }
+    }
+}
+
+void findByAuthor(Book *&books, int number){
+    std::cout<<"|"<<std::setw(15)<<"Name"<<"|"<<std::setw(15)<< "Author"<<"|"<<std::setw(15)<< "Genre"<<"|"<<std::setw(15)<<"Date"
+             <<"|"<<std::setw(10)<<"Coast"<<"|"<<std::setw(5)<<" Id"<<std::setw(5)<<"|"<<std::setw(15)<< "Rating"<<"|"<<std::endl;
+    std::string temp, date;
+    std::cout<<"Input Author: ";
+    std::cin.ignore();
+    std::getline(std::cin,temp);
+    for (int i = 0; i<number; i++){
+        if (temp == books[i].author){
+            date = std::to_string(books[1].date.day) + "/" + std::to_string(books[i].date.month) + "/" + std::to_string(books[i].date.year);
+            std::cout<<"|"<<std::setw(15)<<books[i].name<<"|"<<std::setw(15)
+                     <<books[i].author<<"|"<<std::setw(15)<< books[i].genre<<"|"<<std::setw(15)<<date
+                     <<"|"<<std::setw(10)<<books[i].coast<<"|"<<std::setw(5)<<books[i].id
+                     <<std::setw(5)<<"|"<<std::setw(15) << books[i].rating<<"|"<<std::endl;
+        }
+    }
+}
+
+void findByName(Book *&books, int number){
+    std::cout<<"|"<<std::setw(15)<<"Name"<<"|"<<std::setw(15)<< "Author"<<"|"<<std::setw(15)<< "Genre"<<"|"<<std::setw(15)<<"Date"
+             <<"|"<<std::setw(10)<<"Coast"<<"|"<<std::setw(5)<<" Id"<<std::setw(5)<<"|"<<std::setw(15)<< "Rating"<<"|"<<std::endl;
+    std::string temp, date;
+    std::cin.ignore();
+    std::getline(std::cin,temp);
+    for (int i = 0; i<number; i++){
+        if (temp == books[i].name){
+            date = std::to_string(books[1].date.day) + "/" + std::to_string(books[i].date.month) + "/" + std::to_string(books[i].date.year);
+            std::cout<<"|"<<std::setw(15)<<books[i].name<<"|"<<std::setw(15)
+                     <<books[i].author<<"|"<<std::setw(15)<< books[i].genre<<"|"<<std::setw(15)<<date
+                     <<"|"<<std::setw(10)<<books[i].coast<<"|"<<std::setw(5)<<books[i].id
+                     <<std::setw(5)<<"|"<<std::setw(15) << books[i].rating<<"|"<<std::endl;
+        }
+    }
+}
+void findByGenre(Book *&books, int number){
+    std::cout<<"|"<<std::setw(15)<<"Name"<<"|"<<std::setw(15)<< "Author"<<"|"<<std::setw(15)<< "Genre"<<"|"<<std::setw(15)<<"Date"
+             <<"|"<<std::setw(10)<<"Coast"<<"|"<<std::setw(5)<<" Id"<<std::setw(5)<<"|"<<std::setw(15)<< "Rating"<<"|"<<std::endl;
+    std::string temp, date;
+    std::cin.ignore();
+    std::getline(std::cin,temp);
+    for (int i = 0; i<number; i++){
+        if (temp == books[i].genre){
+            date = std::to_string(books[1].date.day) + "/" + std::to_string(books[i].date.month) + "/" + std::to_string(books[i].date.year);
+            std::cout<<"|"<<std::setw(15)<<books[i].name<<"|"<<std::setw(15)
+                     <<books[i].author<<"|"<<std::setw(15)<< books[i].genre<<"|"<<std::setw(15)<<date
+                     <<"|"<<std::setw(10)<<books[i].coast<<"|"<<std::setw(5)<<books[i].id
+                     <<std::setw(5)<<"|"<<std::setw(15) << books[i].rating<<"|"<<std::endl;
         }
     }
 }

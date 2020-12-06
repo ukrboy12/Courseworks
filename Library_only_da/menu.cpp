@@ -1,19 +1,89 @@
 #include "headers/menu.h"
 
+Book* fillArrayBook(int number){
+    Book *newBooks = new Book[number];
+    newBooks[0].date.day =12;
+    newBooks[0].date.year =2001;
+    newBooks[0].date.month =1;
+    newBooks[0].name ="Pride and Prejudice";
+    newBooks[0].author="Jane Austen";
+    newBooks[0].coast=100;
+    newBooks[0].id =0;
+    newBooks[0].genre ="Novel";
+    newBooks[0].rating =8;
 
-//books[0] = {"1","1","1",1,1,1, 0, 0};
-//books[1] = {"2","2","2",2,2,2, 0, 0};
-//books[2] = {"3","3","3",3,3,3, 0, 0};
+    newBooks[1].date.day =11;
+    newBooks[1].date.year =2017;
+    newBooks[1].date.month =4;
+    newBooks[1].name ="To Kill a Mockingbird";
+    newBooks[1].author="Harper Lee";
+    newBooks[1].coast=50;
+    newBooks[1].id =1;
+    newBooks[1].genre ="Novel";
+    newBooks[1].rating =9;
+
+    newBooks[2].date.day =9;
+    newBooks[2].date.year =2011;
+    newBooks[2].date.month =9;
+    newBooks[2].name = "The Great Gatsby";
+    newBooks[2].author = "Scott Fitzgerald";
+    newBooks[2].coast = 340 ;
+    newBooks[2].id = 2;
+    newBooks[2].genre = "Novel";
+    newBooks[2].rating = 6;
+
+    newBooks[3].date.day = 14;
+    newBooks[3].date.year =2008;
+    newBooks[3].date.month =5;
+    newBooks[3].name = "One Hundred Years of Solitude";
+    newBooks[3].author = "Gabriel Garcia Marquez" ;
+    newBooks[3].coast=150;
+    newBooks[3].id = 3;
+    newBooks[3].genre = "Novel";
+    newBooks[3].rating = 10;
+
+    newBooks[4].date.day = 5;
+    newBooks[4].date.year = 2010;
+    newBooks[4].date.month = 9;
+    newBooks[4].name = "In Cold Blood";
+    newBooks[4].author= "Truman Capote";
+    newBooks[4].coast= 300;
+    newBooks[4].id = 4;
+    newBooks[4].genre = "Novel";
+    newBooks[4].rating = 8 ;
+
+    newBooks[5].date.day = 1;
+    newBooks[5].date.year = 2006;
+    newBooks[5].date.month = 2;
+    newBooks[5].name = "Wide Sargasso Sea";
+    newBooks[5].author = "Jean Rhys" ;
+    newBooks[5].coast = 100;
+    newBooks[5].id = 5;
+    newBooks[5].genre = "Novel";
+    newBooks[5].rating = 6;
+
+    newBooks[6].date.day = 23;
+    newBooks[6].date.year = 1997;
+    newBooks[6].date.month = 12;
+    newBooks[6].name = "The golden eagle";
+    newBooks[6].author = "Ivan Franko";
+    newBooks[6].coast = 200;
+    newBooks[6].id = 6;
+    newBooks[6].genre = "Novel";
+    newBooks[6].rating = 7;
+    return newBooks;
+}
 
 void menu(){
-    int numberBooks = 0;
-    int numberReaders = 0;
-    Book* books = new Book[numberBooks];
+    int numberBooks = 7;
+    int numberReaders = 4;
+    Book* books = fillArrayBook(numberBooks);
     Reader* readers = new Reader[numberReaders];
     std::string choice = "";
+
     while (true){
         std::cout<<std::endl;
-        std::cout<<"Menu: \n0. Exit\t1. Add\t2. Delete\t3. Edit\t4. Sort\n5. Print\t6. Give\t7. Return\t8. Popular\n9. BooksOnHand\t10. ActiveReaders\t11. Overdue"<<std::endl;
+        std::cout<<"Menu: \n0. Exit\t1. Add\t2. Delete\t3. Edit\t4. Sort\n5. Print\t6. Give\t7. Return\t8. Popular\n9. BooksOnHand\t10. ActiveReaders\t11. Overdue\t12. Find"<<std::endl;
         std::cout<<"Input choice : ";
         std::cin>>choice;
 
@@ -75,7 +145,6 @@ void menu(){
                     printReaders(readers, numberReaders);
                 }
             }
-
         } else if (choice == "Exit"){
             break;
         } else if (choice == "Sort"){
@@ -191,9 +260,38 @@ void menu(){
                 }
             }
 
+        } else if (choice == "Find"){
+            std::cout<<"1. Book"<<std::endl;
+            while (true){
+                std::cout<<"Input choice : ";
+                std::cin>>choice;
+                if (choice == "Book"){
+                    while (true) {
+                        std::cout << "1. Author\n" << "2. Name\n" <<"3. Genre"<< std::endl;
+                        std::cout << "Input find : ";
+                        std::cin >> choice;
+                        if(choice == "Author"){
+                            findByAuthor(books, numberBooks);
+                            break;
+                        } else if(choice == "Genre"){
+                            findByGenre(books, numberBooks);
+                            break;
+                        } else if(choice == "Name") {
+                            findByName(books, numberBooks);
+                            break;
+                        } else {
+                            std::cout<<"Incorrect input"<<std::endl;
+                        }
+                    }
+                    break;
+                }
+                else{
+                    std::cout<<"Incorrect input"<<std::endl;
+                }
+            }
         } else if (choice=="Overdue"){
           printInfoOverdueDays(readers, numberReaders);
-        } else if(choice=="ActiveReaders"){
+        } else if (choice=="ActiveReaders"){
           printMostActiveReader(readers, numberReaders);
         } else if (choice == "BooksOnHand"){
             booksOnHand(books, numberBooks);
