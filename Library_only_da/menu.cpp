@@ -233,7 +233,7 @@ void menu(){
                     std::cout<<"No penny"<<std::endl;
                 }
             } else {
-                std::cout<<"Incorrect id"<<std::cout;
+                std::cout<<"Incorrect id"<<std::endl;
             }
         } else if(choice == "Popular"){
             printMostPopularBooks(books,numberBooks);
